@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oCS-iK-axf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="8VH-ON-XPd">
+            <objects>
+                <viewController id="oCS-iK-axf" customClass="CameraViewController" customModule="TodayCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F7V-by-H78">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4J-8F-J3j" customClass="GPUImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="V4J-8F-J3j" secondAttribute="height" multiplier="3:4" id="oJk-yY-eed"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOs-o8-bJY" customClass="QNoResponseView" customModule="TodayCamera" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACd-4m-wni">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XNb-ME-cQ4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ACd-4m-wni" firstAttribute="top" secondItem="vOs-o8-bJY" secondAttribute="top" id="6dz-0B-fIc"/>
+                                    <constraint firstAttribute="trailing" secondItem="ACd-4m-wni" secondAttribute="trailing" id="lRr-3E-F48"/>
+                                    <constraint firstItem="ACd-4m-wni" firstAttribute="leading" secondItem="vOs-o8-bJY" secondAttribute="leading" id="muo-on-mmZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="ACd-4m-wni" secondAttribute="bottom" id="t7D-cY-6Gg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acR-X6-wdJ" customClass="QNoResponseView" customModule="TodayCamera" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfs-nz-ha3">
+                                        <rect key="frame" x="147" y="547" width="80" height="80"/>
+                                        <color key="backgroundColor" red="1" green="0.51764705879999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Tfs-nz-ha3" secondAttribute="height" multiplier="1:1" id="SYk-kC-lGi"/>
+                                            <constraint firstAttribute="height" constant="80" id="TFD-96-0w8"/>
+                                            <constraint firstAttribute="width" constant="80" id="yyz-2W-n3Z"/>
+                                        </constraints>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZMJ-CW-GzG">
+                                        <rect key="frame" x="117.5" y="632" width="140" height="31"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <segments>
+                                            <segment title="照片"/>
+                                            <segment title="视频"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="0.76078431369999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="camerModeSwitch:" destination="oCS-iK-axf" eventType="valueChanged" id="zPy-g3-XRe"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Tfs-nz-ha3" firstAttribute="centerX" secondItem="acR-X6-wdJ" secondAttribute="centerX" id="4rC-hF-zd5"/>
+                                    <constraint firstItem="Tfs-nz-ha3" firstAttribute="width" secondItem="acR-X6-wdJ" secondAttribute="width" multiplier="80:375" id="6ra-dh-k4q"/>
+                                    <constraint firstItem="ZMJ-CW-GzG" firstAttribute="top" secondItem="acR-X6-wdJ" secondAttribute="bottom" multiplier="632/667" id="8Xl-l6-Vhb"/>
+                                    <constraint firstItem="ZMJ-CW-GzG" firstAttribute="centerX" secondItem="acR-X6-wdJ" secondAttribute="centerX" id="CiC-1n-hqq"/>
+                                    <constraint firstItem="Tfs-nz-ha3" firstAttribute="top" secondItem="acR-X6-wdJ" secondAttribute="bottom" multiplier="547/667" id="HRG-rz-s4K"/>
+                                    <constraint firstItem="ZMJ-CW-GzG" firstAttribute="height" secondItem="acR-X6-wdJ" secondAttribute="height" multiplier="30:667" id="Qk9-MN-j7U"/>
+                                    <constraint firstItem="ZMJ-CW-GzG" firstAttribute="width" secondItem="acR-X6-wdJ" secondAttribute="width" multiplier="140:375" id="h25-Rm-WVu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="V4J-8F-J3j" firstAttribute="top" secondItem="F7V-by-H78" secondAttribute="top" id="MaR-Ug-Npg"/>
+                            <constraint firstItem="V4J-8F-J3j" firstAttribute="leading" secondItem="F7V-by-H78" secondAttribute="leading" id="XbU-nn-WwG"/>
+                            <constraint firstAttribute="trailing" secondItem="V4J-8F-J3j" secondAttribute="trailing" id="aKG-cT-MGE"/>
+                            <constraint firstItem="acR-X6-wdJ" firstAttribute="leading" secondItem="F7V-by-H78" secondAttribute="leading" id="dfT-So-J7H"/>
+                            <constraint firstAttribute="trailing" secondItem="acR-X6-wdJ" secondAttribute="trailing" id="iE4-Fj-lbw"/>
+                            <constraint firstAttribute="trailing" secondItem="vOs-o8-bJY" secondAttribute="trailing" id="iyz-yG-zKd"/>
+                            <constraint firstAttribute="bottom" secondItem="vOs-o8-bJY" secondAttribute="bottom" id="m00-Ls-pqm"/>
+                            <constraint firstItem="vOs-o8-bJY" firstAttribute="leading" secondItem="F7V-by-H78" secondAttribute="leading" id="n2O-eW-Jkk"/>
+                            <constraint firstItem="vOs-o8-bJY" firstAttribute="top" secondItem="F7V-by-H78" secondAttribute="top" id="qdz-ra-wVH"/>
+                            <constraint firstAttribute="bottom" secondItem="acR-X6-wdJ" secondAttribute="bottom" id="v9s-PS-q2W"/>
+                            <constraint firstItem="acR-X6-wdJ" firstAttribute="top" secondItem="F7V-by-H78" secondAttribute="top" id="zMD-eE-3rk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gh9-X6-sPC"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraModeControl" destination="ZMJ-CW-GzG" id="ONP-Hd-hWz"/>
+                        <outlet property="captureButton" destination="Tfs-nz-ha3" id="PeV-lk-SNW"/>
+                        <outlet property="controlsContainView" destination="acR-X6-wdJ" id="iKQ-dI-JGc"/>
+                        <outlet property="effectView" destination="ACd-4m-wni" id="xW2-KE-Fqh"/>
+                        <outlet property="renderView" destination="V4J-8F-J3j" id="2fc-8R-ato"/>
+                        <outlet property="renderView_WH_Aspect" destination="oJk-yY-eed" id="5fY-vK-gBS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nz7-pP-Vfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-133.59999999999999" y="72.413793103448285"/>
+        </scene>
+    </scenes>
+</document>
